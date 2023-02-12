@@ -1,0 +1,22 @@
+		if (node2remove->left)
+		{
+			if (replace_root)
+			{
+				new_root = node2remove->left;
+			}
+			replacement = node2remove->left;
+			replacement->parent = n2r_parent;
+			if (n2r_parent)  /* non-root node to remove */
+			{
+			if (n2r_parent->left == node2remove)
+			{
+				/* Link at left of parent */
+				n2r_parent->left = replacement;
+			}
+			else
+			{
+				/* Link at right */
+				n2r_parent->right = replacement;
+			}
+			}
+		}
